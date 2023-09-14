@@ -16,5 +16,5 @@ provider "okta"{
     private_key = "${path.module}/rsa.pem"
 }
 resource "okta_group" "terra_group"{
-  name = "Terra_Group"
+  name = "Terra_Form_Group"
 }
