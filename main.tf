@@ -13,8 +13,8 @@ provider "okta"{
     base_url = "okta.com"
     client_id = "0oab9bdzjkWEzsqkR5d7"
     scopes = ["okta.groups.manage"]
-    private_key = "${path.module}/rsa.pem"
+    private_key = "var.TF_VAR_private_key_path"
 }
-resource "okta_group" "terra_group"{
-  name = "Terra_Form_Group"
+resource "okta_group" "terra_group1"{
+  name = "Terra_Form_Group1"
 }
