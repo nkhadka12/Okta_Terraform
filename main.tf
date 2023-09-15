@@ -1,4 +1,7 @@
-terraform {  
+terraform { 
+   
+  
+   
   required_providers {
     okta = {
       source = "okta/okta"
@@ -17,12 +20,7 @@ provider "okta"{
 
 }
 
- cloud {
-    organization = "TerraForm_Workshop12"
-    workspaces {
-      name = "Okta_Terraform"
-    }
-  }
+
 resource "okta_group" "terra_group"{
   name = "Terra_Form_Group"
 }
