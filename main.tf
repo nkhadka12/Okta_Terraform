@@ -13,8 +13,16 @@ provider "okta"{
     base_url = "okta.com"
     client_id = "0oab9bdzjkWEzsqkR5d7"
     scopes = ["okta.groups.manage"]
-    private_key = "var.TF_VAR_private_key_path"
+    private_key = "${path.module}/rsa.pem"
+
 }
-resource "okta_group" "terra_group1"{
-  name = "Terra_Form_Group1"
+
+ cloud {
+    organization = "TerraForm_Workshop12"
+    workspaces {
+      name = "Okta_Terraform"
+    }
+  }
+resource "okta_group" "terra_group"{
+  name = "Terra_Form_Group"
 }
